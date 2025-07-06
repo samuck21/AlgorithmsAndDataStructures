@@ -10,6 +10,7 @@ public class Main {
         //Excercie 1
         IsUnique is_unique= new IsUnique();
         System.out.print(is_unique.isUnique("Holaa"));
+        System.out.print("Hola");
 
 
 
