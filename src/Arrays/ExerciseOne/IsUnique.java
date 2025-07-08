@@ -1,4 +1,4 @@
-package Arrays.ExcerciceOne;
+package Arrays.ExerciseOne;
 
 import java.util.HashSet;
 import java.util.Set;
