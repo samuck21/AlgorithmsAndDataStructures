@@ -4,7 +4,13 @@ import List.ExerciseOne.RemoveDups;
 import List.ExerciseThree.NthNodeToLast;
 import List.ExerciseTwo.MergeTwoSortedLists;
 import List.Node;
+import StackandQueue.ExerciseThree.SortStack;
+import StackandQueue.ExerciseTwo.ValidParenthesis;
+import StackandQueue.QueueWithStacks;
 import org.junit.Test;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import static org.junit.Assert.assertEquals;
 
@@ -109,6 +115,8 @@ public class Main {
         System.out.print( result.next.next.value);
         System.out.print( result.next.next.next.value);
           */
+
+        /*
         //Execise 5
 
         SwapNodesInPairs swap = new SwapNodesInPairs();
@@ -123,6 +131,42 @@ public class Main {
         System.out.print( result.next.next.value);
         System.out.print( result.next.next.next.value);
         System.out.print( result.next.next.next.next.value);
+           */
+        /*
+        //Exercise 1
+        QueueWithStacks queueWithStacks = new QueueWithStacks();
+        queueWithStacks.add(1);
+        queueWithStacks.add(2);
+        queueWithStacks.add(3);
+        System.out.print(queueWithStacks.peek());
+        System.out.print(queueWithStacks.size());
+        queueWithStacks.remove();
+        System.out.print(queueWithStacks.peek());
+
+         */
+        /*
+        //Exercise 2
+
+        ValidParenthesis valid = new ValidParenthesis();
+
+        System.out.print(valid.isValid("[][][]"));
+        System.out.println(valid.isValid("[]{][]"));
+        */
+        SortStack sortStack = new SortStack();
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(1);
+        stack.push(5);
+        stack.push(2);
+        stack.push(4);
+        Deque<Integer> sortedStack = sortStack.sort(stack);
+        System.out.println(sortedStack.peek());
+        sortedStack.remove();
+        System.out.println(sortedStack.peek());
+        sortedStack.remove();
+        System.out.println(sortedStack.peek());
+        sortedStack.remove();
+        System.out.println(sortedStack.peek());
+
 
 
     }
