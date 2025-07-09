@@ -4,9 +4,11 @@ import List.ExerciseOne.RemoveDups;
 import List.ExerciseThree.NthNodeToLast;
 import List.ExerciseTwo.MergeTwoSortedLists;
 import List.Node;
+import StackandQueue.ExerciseFour.StackMin;
 import StackandQueue.ExerciseThree.SortStack;
 import StackandQueue.ExerciseTwo.ValidParenthesis;
 import StackandQueue.QueueWithStacks;
+import Trees.BinaryTreeTraversals;
 import org.junit.Test;
 
 import java.util.ArrayDeque;
@@ -152,6 +154,8 @@ public class Main {
         System.out.print(valid.isValid("[][][]"));
         System.out.println(valid.isValid("[]{][]"));
         */
+        /*
+        //Exercise 3
         SortStack sortStack = new SortStack();
         Deque<Integer> stack = new ArrayDeque<>();
         stack.push(1);
@@ -166,6 +170,44 @@ public class Main {
         System.out.println(sortedStack.peek());
         sortedStack.remove();
         System.out.println(sortedStack.peek());
+
+        //
+        */
+        //Exercise 4
+
+        /*
+        StackMin stackMin = new StackMin();
+        stackMin.push(3);
+        stackMin.push(1);
+        stackMin.push(2);
+        System.out.println(stackMin.pop());
+        */
+
+        //Exercide 1
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+
+        root.right.right = new Node(6);
+
+        root.left.left.left = new Node(7);
+
+        root.left.right.left = new Node(8);
+
+        System.out.print("In Order Tasversal:   ");
+        BinaryTreeTraversals.inOrderTraversal(root);
+
+        System.out.print("Pre Order Tasversal:   ");
+        BinaryTreeTraversals.preOrderTraversal(root);
+
+        System.out.print("Post Order Tasversal:   ");
+        BinaryTreeTraversals.postOnderTraversal(root);
+
+
+
 
 
 
