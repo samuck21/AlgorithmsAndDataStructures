@@ -1,3 +1,7 @@
+import Grafos.ExerciseOne.RouteBetweenNodes;
+import Grafos.ExerciseTwo.CloneGraph;
+import Grafos.Graph;
+import Grafos.GraphNode;
 import List.ExerciseFive.SwapNodesInPairs;
 import List.ExerciseFour.AddTwoNumbers;
 import List.ExerciseOne.RemoveDups;
@@ -13,6 +17,7 @@ import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -182,7 +187,7 @@ public class Main {
         stackMin.push(2);
         System.out.println(stackMin.pop());
         */
-
+        /*
         //Exercide 1
         Node root = new Node(1);
         root.left = new Node(2);
@@ -206,7 +211,47 @@ public class Main {
         System.out.print("Post Order Tasversal:   ");
         BinaryTreeTraversals.postOnderTraversal(root);
 
+         */
 
+        //Grafos
+        /*
+        //Exercise 1
+        RouteBetweenNodes routeBetweenNodes = new RouteBetweenNodes();
+        Graph graph = new Graph();
+
+        GraphNode node0= graph.getOrCreateNode("0");
+        GraphNode node1= graph.getOrCreateNode("1");
+        GraphNode node2= graph.getOrCreateNode("2");
+        GraphNode node3= graph.getOrCreateNode("3");
+        GraphNode node4= graph.getOrCreateNode("4");
+        graph.addEdge("4","1");
+        graph.addEdge("4","3");
+        graph.addEdge("3","2");
+        graph.addEdge("2","1");
+
+      System.out.println(routeBetweenNodes.isRouteBetween(graph,node2,node4));
+        */
+        CloneGraph cloneGraph = new CloneGraph();
+        CloneGraph.Node node1 = cloneGraph.new Node();
+        node1.val = 1;
+        CloneGraph.Node node2 = cloneGraph.new Node();
+        node1.val = 2;
+        CloneGraph.Node node3 = cloneGraph.new Node();
+        node1.val = 3;
+        CloneGraph.Node node4 = cloneGraph.new Node();
+        node1.val = 4;
+
+        node1.neighbors = List.of(node2,node3);
+        node2.neighbors = List.of(node3);
+        node3.neighbors = List.of(node4);
+        node4.neighbors = List.of(node2);
+
+        CloneGraph.Node clonedNode1 =cloneGraph.cloneGraph(node1);
+        CloneGraph.Node clonedNode2 =clonedNode1.neighbors.get(0);
+        CloneGraph.Node clonedNode3 =clonedNode1.neighbors.get(1);
+        CloneGraph.Node clonedNode =clonedNode1.neighbors.get(0);
+
+        System.out.print(clonedNode1.val);
 
 
 
