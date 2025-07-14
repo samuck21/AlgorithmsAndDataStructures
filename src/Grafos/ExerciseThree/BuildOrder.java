@@ -11,7 +11,7 @@ import java.util.Collections;
 public class BuildOrder {
 
     public ArrayList<String> buildOrder(String[] projects, String[][]dependencies){
-          Graph graph = buildDependencyGraph();
+          Graph graph = buildDependencyGraph(projects,dependencies);
           ArrayList<String> sortedProjects = new ArrayList<>();
           for (GraphNode node : graph.nodes.values()){
               depthFirstSearch(node,sortedProjects);
@@ -19,6 +19,18 @@ public class BuildOrder {
         Collections.reverse(sortedProjects);
           return sortedProjects;
     }
+
+    private Graph buildDependencyGraph(String[] projects, String[][] dependencies) {
+     Graph graph = new Graph();
+     for(String p:projects){
+         graph.getOrCreateNode(p);
+     }
+     for (String[] dep:dependencies){
+         graph.addEdge(dep[0],dep[1]);
+     }
+     return graph;
+    }
+
     private void depthFirstSearch(GraphNode node, ArrayList<String>sortedProjects){
     if(node == null) return;
     if(node.status == GraphNodeStatus.Visited){
