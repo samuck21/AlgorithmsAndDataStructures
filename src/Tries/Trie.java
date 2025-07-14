@@ -2,7 +2,7 @@ package Tries;
 
 public class Trie {
     TrieNode root;
-    public Trie(){
+    public Trie(boolean ignoreCase){
         root = new TrieNode();
     }
     public void insert(String word){
